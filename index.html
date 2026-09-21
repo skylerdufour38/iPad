@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iOS IPA Archive</title>
+    <meta
+      name="description"
+      content="Browse archived iOS applications and their metadata in a lightweight GitHub Pages-friendly catalog."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap nav">
+        <div class="brand-wrap">
+          <span class="brand-mark">iOS</span>
+          <div>
+            <p class="eyebrow">Archive</p>
+            <h1>IPA Library</h1>
+          </div>
+        </div>
+        <a class="nav-link" href="README.md">Project notes</a>
+      </div>
+    </header>
+
+    <main class="wrap main-content">
+      <section class="hero">
+        <div>
+          <p class="eyebrow accent">Archived collection</p>
+          <h2>Browse classic iPhone apps from the early iOS era.</h2>
+        </div>
+        <div class="stats" aria-label="Archive summary">
+          <div class="stat-card">
+            <strong id="totalApps">0</strong>
+            <span>Apps</span>
+          </div>
+          <div class="stat-card">
+            <strong>iOS</strong>
+            <span>Platform</span>
+          </div>
+          <div class="stat-card">
+            <strong>GitHub Pages</strong>
+            <span>Hosting</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Archive controls">
+        <label class="search-field" for="searchInput">
+          <span>Search</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Find an app by name or bundle ID"
+            autocomplete="off"
+          />
+        </label>
+
+        <label class="sort-field" for="sortSelect">
+          <span>Sort</span>
+          <select id="sortSelect">
+            <option value="name">Name</option>
+            <option value="version">Version</option>
+            <option value="size">File size</option>
+            <option value="min-os">Minimum OS</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="appGrid" class="app-grid" aria-live="polite"></section>
+    </main>
+  </body>
+</html>
